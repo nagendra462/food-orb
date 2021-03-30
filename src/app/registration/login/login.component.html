@@ -1,0 +1,18 @@
+<div>
+    <div *ngIf="inValid">
+        <i class="text-danger">Invalid credentials!!!</i>
+    </div>
+    <div class="row">
+        <div class="col"><label>Enter User Name </label></div>
+        <div class="col"><input type="text" #loginId ></div>
+    </div>
+
+    <div class="row">
+        <div class="col"><label>Enter Password </label></div>
+        <div class="col"><input type="password" #password ></div>
+    </div>
+
+    <div class="row">
+        <div class="col"><button class="btn btn-primary mr-1"  (click)="loginCheck(loginId,password)">Login</button>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row justify-content-left">
+        <h2>User Settings:</h2>
+    </div>
+    <hr>
+    <h3>Addresses</h3>
+    <div class="col-sm-12">
+        <div *ngIf="isAddressSaved">     </div>
+    </div>
+    <div class="row justify-content-left">
+        <div class="col-3 p-3">
+            <input type="button" class="btn btn-primary" value="Add New Address"
+                (click)="addAddressDetails()">
+
+        </div>
+    </div>
+    <div class="row justify-content-left">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let addressesCheck of addresses">
+                    <td>{{addressesCheck.name}}</td>
+                    <td>{{addressesCheck.address}}</td>
+                    <td><input type="button" class="btn btn-primary" value="Edit"
+                            (click)="editAddressDetails(addressesCheck)">
+                    </td>
+                    <td><input type="button" class="btn btn-primary" value="Delete"
+                            (click)="deleteAddressDetails(addressesCheck)">
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

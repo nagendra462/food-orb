@@ -1,0 +1,46 @@
+<form [formGroup]="myForm" (submit)=saveEmployee()>
+
+    <div class="col"> <label>Phone Number </label></div>
+    <div class="col"> <input type="text" [formControl]="phonenumber" ngModel></div>
+    <div *ngIf="phonenumber.invalid && phonenumber.dirty && phonenumber.errors">
+        <span class="text-danger" *ngIf="phonenumber.hasError('required')">
+            Phone Number is required.
+        </span>
+        <span class="text-danger" *ngIf="phonenumber.hasError('pattern')">
+            Phone number is not valid.
+        </span>
+    </div>
+    <br>
+
+    <div class="col"> <label for="firstname">Name</label></div>
+    <div class="col"><input type="text" [formControl]="firstname" ngModel></div>
+    <span class="text-danger" *ngIf="firstname.dirty  && firstname.invalid  && firstname.hasError('required') "> Name is
+        required!!!</span>
+    <br>
+
+    <div class="col"><label for="email">Email </label></div>
+    <div class="col"><input type="text" [formControl]="email" ngModel></div>
+    <div *ngIf="email.errors">
+        <span class="text-danger" *ngIf="email.dirty && email.invalid && email.hasError('required')">
+            Email is required.
+        </span>
+        <span class="text-danger" *ngIf="email.hasError('pattern')">
+            Email is not valid.
+        </span>
+    </div>
+    <br>
+
+    <div class="col"> <label>Password </label></div>
+    <div class="col"><input type="password" [formControl]="password" ngModel></div>
+    <span class="text-danger" *ngIf="password.dirty && password.invalid && password.hasError('required') ">Password is
+        required!!!</span>
+    <br>
+
+
+    <div>
+        <button class="btn btn-primary mr-1" [disabled]="!myForm.valid">Submit</button>
+        <button class="btn btn-secondary" type="reset">Clear</button>
+    </div>
+
+</form>
+<br>
