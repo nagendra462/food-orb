@@ -1,0 +1,42 @@
+<br/>
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="card" >
+        <div class="card-body">
+            <h5 class="card-title">Order Details </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Your Order Placed Successfully</h6>
+            <h3>Status: <p id="txt" hidden>1</p><p id="status">Placed</p></h3>
+            <h6 id="status">Remaining time: </h6><h6 id="remaining"></h6> 
+            <p class="card-text">
+                Your food is being cooked sit back and relax while our partners deliver hot and yummy food at your doorstep.
+                
+            </p>
+            <p>Order ID: </p>
+            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">Cancel Order</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Do you want to cancel your order?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="button" class="btn btn-danger" value="Cancel My Order" (click)= "cancel()">
+        </div>
+      </div>
+    </div>
+  </div>

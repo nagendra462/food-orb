@@ -1,1 +1,46 @@
-<p>order works!</p>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 justify-content-center p-3">
+            <!-- Search form -->
+            <input class="form-control" type="text" placeholder="Search Food Items" aria-label="Search">
+        </div>
+    </div>
+    <h2 style="text-align: center;" class="mr-1 justify-content-center"> Order Summary Page </h2>
+    <div class="row justify-content-center d-flex">
+        
+        <div style="max-width: 400px;" class="mr-1" *ngFor="let item of orders">
+                <!-- Card -->
+                <div class="card booking-card">
+                    <div class="view overlay">
+                        <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title font-weight-bold"><a>{{item}}</a></h4>
+                        <p class="text-muted"> Price | INR: ₹ 100</p>
+                        <!-- Text -->
+                        <p class="card-text">{{item}}</p>
+                 
+                    </div>
+            
+                </div>
+                <br>
+        </div>
+        <div>
+        
+    </div>
+</div>
+<div style="text-align: center;">
+<h4> Grand Total- INR: ₹ 200</h4>
+        <input type="button" class="btn btn-primary mr-1" value="Confirm" (click)="confirm()">
+        <input type="button" class="btn btn-primary" value="Cancel" (click)="cancel()"><br><br>
+</div>
+
+    
+   

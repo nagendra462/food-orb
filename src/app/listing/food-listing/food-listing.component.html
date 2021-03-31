@@ -1,1 +1,48 @@
-<p>food-listing works!</p>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 justify-content-center p-3">
+            <!-- Search form -->
+            <input class="form-control" type="text" placeholder="Search Food Items" aria-label="Search">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="card-columns"  *ngFor="let listing of listings">
+                <!-- Card -->
+                <div class="card booking-card">
+
+                    <!-- Card image -->
+                    <div class="view overlay">
+                        
+                        <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title font-weight-bold"><a>{{ listing.restaurent_name }}</a></h4>
+                        <p class="text-muted">{{listing.description }}, Restaurant | Rating: <strong>{{listing.rating }}</strong> | INR: ₹ {{listing.cost}}</p>
+                        <!-- Text -->
+                        <p class="card-text">{{listing.name }}</p>
+                        <!-- <hr class="my-4"> -->
+                        <!-- Button -->
+                        <!-- <a href="#" class="btn btn-primary">Buy</a> -->
+                       
+                        <button type="button" class="btn btn-primary" data-toggle="modal" > Add to Cart</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" > Buy / Order </button>
+
+                    </div>
+
+                </div>
+                <!-- Card -->
+           
+
+        </div>
+    </div>
+    </div>
+
+    
+   

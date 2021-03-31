@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Listing } from 'src/app/_models/listing';
+import { FoodService } from 'src/app/_services/food.service';
+import { HeaderService } from 'src/app/_services/header.service';
 
 @Component({
   selector: 'app-food-listing',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodListingComponent implements OnInit {
 
-  constructor() { }
+  listings: Array<Listing> = [];
+  constructor(private foodService: FoodService) {
+    this.listings = [
+      new Listing("no", "Naturals", "natural Ice cream", "Icecream", "5", "200"),
+      new Listing("no", "Chutneys", "Dosa", "Dosa", "5", "200")];
+    this.foodService.getFeed().subscribe(
+      res => {
+        let data = JSON.parse(res._body);
+        console.log(data);
+        this.listings = data.food;
+      },
+      err => console.log(err))
+
+  }
 
   ngOnInit(): void {
   }
 
+
 }
+
+

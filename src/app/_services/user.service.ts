@@ -9,7 +9,7 @@ import { HeaderService } from './header.service';
 export class UserService {
 
 
-  getUsers() {
+  getUsers()  {
 
     const users: Array<User> = [
       new User("test@test.com", "test", "User1", "admin"),
