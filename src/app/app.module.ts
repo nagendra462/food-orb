@@ -17,6 +17,8 @@ import { ListingModule } from './listing/listing.module';
 import { OrderingModule } from './ordering/ordering.module';
 import { FriendsListModule } from './friends-list/friends-list.module';
 import { RegistrationModule } from './registration/registration.module';
+import { FoodListingComponent } from './listing/food-listing/food-listing.component';
+import { FriendlistComponent } from './friends-list/friendlist/friendlist.component';
 
 
 @NgModule({
@@ -24,19 +26,17 @@ import { RegistrationModule } from './registration/registration.module';
     AppComponent,
     ErrorComponent,
     LoginComponent,
-    LogoutComponent,
+    LogoutComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-  
     ReactiveFormsModule,
     RegistrationModule,
     ListingModule,
-    OrderingModule,
-    FriendsListModule
+    OrderingModule
   ],
   providers: [
     {

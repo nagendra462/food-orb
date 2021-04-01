@@ -1,0 +1,26 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 justify-content-center p-3">
+            <!-- Search form -->
+            <input class="form-control" type="text" placeholder="Search Food Items" aria-label="Search">
+        </div>
+    </div>
+    <h2 style="text-align: center;"> Friends List </h2>
+    <div>
+        
+        <div *ngFor="let friend of friends">
+            <table class="table">
+                <tr class="row">
+                       <td class="col"><h6><a>{{friend}}</a></h6></td>
+                        <td class="col">  <input type="button" class="btn btn-primary mr-1" value="Add Friend" (click)= "addFriend()"></td>
+                        </tr>
+            </table> 
+        <div>
+        
+    </div>
+</div>
+
+
+    
+   
