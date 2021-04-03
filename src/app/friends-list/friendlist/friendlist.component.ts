@@ -11,7 +11,7 @@ export class FriendlistComponent implements OnInit {
   
   friends: Array<String> = [];
   constructor(private router:Router) { 
-    this.friends=["James", "Adam", "Nino", "Gabriel"];
+    
   }
 
   ngOnInit(): void {

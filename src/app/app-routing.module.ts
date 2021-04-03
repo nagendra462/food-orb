@@ -18,7 +18,7 @@ import { AuthGuardService } from './_helpers/auth-guard.service';
 
 const routes: Routes = [
   { path: 'order', component: OrderComponent,canActivate:[AuthGuardService] },
-  { path: 'order-track', component: TrackingComponent,canActivate:[AuthGuardService] },
+  { path: 'order-track/:id', component: TrackingComponent,canActivate:[AuthGuardService] },
   { path: 'food-listing', component: FoodListingComponent ,canActivate:[AuthGuardService]},
   { path: 'profile', component: ProfileComponent ,canActivate:[AuthGuardService]},
   { path: 'settings', component: SettingsComponent ,canActivate:[AuthGuardService]},
