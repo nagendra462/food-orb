@@ -2,7 +2,6 @@ import { state } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Order } from 'src/app/_models/order';
 import { OrderStatus } from 'src/app/_models/orderstatus';
 
 @Component({
@@ -26,7 +25,7 @@ export class TrackingComponent implements OnInit{
       });
       this.onConfirm(this.id);
       this.orderStatusList.forEach(status=>{
-        if(this.id==status.id){
+        if(this.id===status.id){
           this.orderStatus= status;
         }
       }
@@ -34,11 +33,11 @@ export class TrackingComponent implements OnInit{
    }
 
   cancel(){
-    this.router.navigate(["/profile"]);
+    this.router.navigate(["/food-listing"]);
   }
   
   onConfirm(id: string){
-    this.http.get<any>("assets/food-app.json").subscribe((data)=>
+    return this.http.get<any>("assets/food-app.json").subscribe((data)=>
      this.orderStatusList = data.orderStatus
     )
   }

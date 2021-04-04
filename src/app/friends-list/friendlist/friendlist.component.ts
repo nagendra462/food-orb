@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-friendlist',
@@ -9,9 +9,14 @@ import { Router } from '@angular/router';
 
 export class FriendlistComponent implements OnInit {
   
-  friends: Array<String> = [];
-  constructor(private router:Router) { 
-    
+  friends: String = '';
+  constructor(private router:Router, private activatedRoute: ActivatedRoute) { 
+    this.activatedRoute.params
+    .subscribe(
+      (params)=>{
+          this.friends= params["friends"];
+          console.log("friends list: "+ this.friends)
+      });
   }
 
   ngOnInit(): void {

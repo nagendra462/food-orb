@@ -12,26 +12,26 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class AddFriendComponent implements OnInit {
  
-  friends: Array<any>=[];
-  friendsList: Array<String>=[];
-  loginId: String="test@test.com";
+  friends: Array<string>=[];
+  friendsList: Array<string>=[];
+  message: string='';
   constructor(private router: Router, private userService: UserService, private http: HttpClient) { 
     
   }
 
   ngOnInit(){
     this.http.get<any>("assets/food-app.json").subscribe((data)=>
-    this.friends = data.friends
+    this.friendsList = data.friends
     )
-    this.friends.forEach(friend => {
-      if(friend=== this.loginId){
-        this.friendsList=friend.data;
-      }
-      
-    });
   }
-  addFriend(){
-    
+  addFriend(friend: string){
+     this.friends.push(friend);
+     this.message="New friend added";
+     this.friendsList = this.friendsList.filter(obj => obj !== friend);
+     this.router.navigate(["/add-friend"]);
   }
 
+  friendslist(){
+    this.router.navigate(["/friend-list", {friends: this.friends}]);
+  }
 }
