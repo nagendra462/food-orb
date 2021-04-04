@@ -11,10 +11,9 @@ export class FoodService {
 
   constructor(private http: HttpClient, private header: HeaderService,) { }
 
+  apiBaseURL = "http://localhost/";
 
   public getFeed(): Observable<any>{
-    return  this.http.get<any>("assets/food-app.json");
+    return this.http.get(this.apiBaseURL +  'api/v1/feed');
   }
-
- 
 }
