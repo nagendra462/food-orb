@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/_models/order';
 import { FoodService } from 'src/app/_services/food.service';
@@ -11,6 +11,7 @@ import { TrackingComponent } from '../tracking/tracking.component';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+ 
   orders: Array<Order> = [];
   constructor(private router: Router, private http: HttpClient) { 
   }

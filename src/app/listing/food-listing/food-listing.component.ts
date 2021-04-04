@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
 import { Listing } from 'src/app/_models/listing';
 import { FoodService } from 'src/app/_services/food.service';
 import { HeaderService } from 'src/app/_services/header.service';
@@ -13,16 +14,14 @@ import { HeaderService } from 'src/app/_services/header.service';
 export class FoodListingComponent implements OnInit {
 
   listings: Array<Listing> = [];
-  constructor(private foodService: FoodService) {
-    this.listings = [
-      new Listing("no", "Naturals", "natural Ice cream", "Icecream", "5", "200"),
-      new Listing("no", "Chutneys", "Dosa", "Dosa", "5", "200")];
-      console.log("test");
+  order: Array<any> = [];
+  
+  constructor(private foodService: FoodService, private router: Router) {
+
     this.foodService.getFeed().subscribe(
       res => {
-        let data = JSON.parse(res._body);
-        console.log(data);
-        this.listings = data.food;
+
+        this.listings = res.feedlist;
       },
       err => console.log(err))
 
@@ -30,6 +29,14 @@ export class FoodListingComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  addToCart(index: any) {
+    console.log(index);
+
+    this.order.push(this.listings[index]);
+    this.router.navigate(['/order']);
+  }
+
 
 
 }

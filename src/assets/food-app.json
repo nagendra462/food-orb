@@ -1,46 +1,62 @@
 {
   "users": [
     {
-      "loginId":"test@test.com",
-      "password":"test",
+      "loginId": "test@test.com",
+      "password": "test",
       "firstName": "Nag",
       "role": "Admin"
     },
     {
-      "loginId":"test2@test.com",
-      "password":"test",
+      "loginId": "test2@test.com",
+      "password": "test",
       "firstName": "Nagendra",
       "role": "User"
     },
     {
-      "loginId":"test3@test.com",
-      "password":"test",
+      "loginId": "test3@test.com",
+      "password": "test",
       "firstName": "Nagendra1",
       "role": "User"
     }
-    ],
-    "orders":[
-      {
-        "listing_id":"1",
-        "quantity": "5",
-        "amount": "200"
-      }
-      ],
-    "orderStatus":[
-      {
-        "orderId": "1",
-        "status": "placed",
-        "description": "Your order has been placed"
-        
-      }],
-
-      "friends":[
-        {
-        "test@test.com":[
-          "Jamie",
-          "Laura"
-          ]
-        } 
-        
-        ]
+  ],
+  "orders": [
+    {
+      "listing_id": "1",
+      "quantity": "5",
+      "amount": "200"
+    }
+  ],
+  "orderStatus": [
+    {
+      "orderId": "1",
+      "status": "placed",
+      "description": "Your order has been placed"
+    }
+  ],
+  "friends": [
+    {
+      "test@test.com": [
+        "Jamie",
+        "Laura"
+      ]
+    }
+  ],
+  "feedlist": [
+    {
+      "image_url": "no",
+      "restaurent_name": "Naturals",
+      "description": "natural Ice cream",
+      "name": "Icecream",
+      "rating": "5",
+      "cost": "200"
+    },
+    {
+      "image_url": "no",
+      "restaurent_name": "Chutneys",
+      "description": "Dosa",
+      "name": "Dosa",
+      "rating": "5",
+      "cost": "200"
+    }
+  ]
 }
