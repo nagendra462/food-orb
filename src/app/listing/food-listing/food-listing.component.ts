@@ -17,6 +17,7 @@ export class FoodListingComponent implements OnInit {
     this.listings = [
       new Listing("no", "Naturals", "natural Ice cream", "Icecream", "5", "200"),
       new Listing("no", "Chutneys", "Dosa", "Dosa", "5", "200")];
+      console.log("test");
     this.foodService.getFeed().subscribe(
       res => {
         let data = JSON.parse(res._body);
