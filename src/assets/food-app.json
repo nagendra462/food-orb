@@ -18,6 +18,7 @@
       "firstName": "Nagendra1",
       "role": "User"
     }
+<<<<<<< HEAD
   ],
   "orders": [
     {
@@ -59,4 +60,26 @@
       "cost": "200"
     }
   ]
+=======
+    ],
+    "orders":[
+      {
+        "listing_id":"1",
+        "quantity": "5",
+        "amount": "200"
+      }
+      ],
+    "orderStatus":[
+      {
+        "orderId": "1",
+        "status": "placed",
+        "description": "Your order has been placed"
+        
+      }],
+
+      "friends":[
+          "Jamie",
+          "Laura"
+        ]
+>>>>>>> d98a1b54a5ee85a77a448d0fef9f480d9aaaebc1
 }

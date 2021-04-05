@@ -4,14 +4,14 @@
 
         <div class="card" >
         <div class="card-body">
-          <!--<div style="max-width: 400px;" class="mr-1" *ngFor="let orderStatus of orderStatusList">-->
+          <div style="max-width: 400px;" class="mr-1" *ngFor="let orderStatus of orderStatusList">
             <h5 class="card-title">Order Details </h5>
             <h3>Status: <span id="status">{{orderStatus.status}}</span></h3>
             <h6 id="status">Remaining time: </h6><p id="remaining"></p> 
             <p class="card-text">{{orderStatus.description}}
             </p>
             <p>Order ID: {{orderStatus.orderId}}</p>
-            <button type="button" class="btn btn-outline-danger" >Cancel Order</button>
+            <button type="button" class="btn btn-outline-danger" (click)= "cancel()" >Cancel Order</button></div>
         </div>
         </div>
     </div>

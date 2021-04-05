@@ -8,17 +8,23 @@
     </div>
     <h2 style="text-align: center;"> Friends List </h2>
     <div>
-        
+        <div *ngIf="message">
+            <h3>New friend added</h3>
+        </div> 
         <div *ngFor="let friend of friendsList">
             <table class="table">
                 <tr class="row">
                        <td class="col"><h6><a>{{friend}}</a></h6></td>
-                        <td class="col">  <input type="button" class="btn btn-primary mr-1" value="Add Friend" (click)= "addFriend()"></td>
+                        <td class="col">  <input type="button" class="btn btn-primary mr-1" value="Add Friend" (click)= "addFriend(friend)"></td>
                         </tr>
             </table> 
         <div>
         
     </div>
+    
+</div>
+<div style="text-align: right;">
+    <input type="button" class="btn btn-primary mr-1" value="Friends list" (click)= "friendslist()">
 </div>
 
 
