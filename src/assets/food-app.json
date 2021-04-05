@@ -18,7 +18,6 @@
       "firstName": "Nagendra1",
       "role": "User"
     }
-<<<<<<< HEAD
   ],
   "orders": [
     {
@@ -60,8 +59,7 @@
       "cost": "200"
     }
   ]
-=======
-    ],
+    ,
     "orders":[
       {
         "listing_id":"1",
@@ -81,5 +79,4 @@
           "Jamie",
           "Laura"
         ]
->>>>>>> d98a1b54a5ee85a77a448d0fef9f480d9aaaebc1
 }
