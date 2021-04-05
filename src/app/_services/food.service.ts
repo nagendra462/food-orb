@@ -17,9 +17,7 @@ export class FoodService {
     return  this.http.get<any>("assets/food-app.json");
   }
 
-<<<<<<< HEAD
  
-=======
   public getOrder(): Observable<any>{
     return this.http.get(this.apiBaseURL +  'api/v1/orders'); 
   }
@@ -36,5 +34,4 @@ export class FoodService {
     return this.http.get(this.apiBaseURL +  'api/v1/friends'); 
   }
 
->>>>>>> d98a1b54a5ee85a77a448d0fef9f480d9aaaebc1
 }
