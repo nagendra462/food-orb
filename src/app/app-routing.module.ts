@@ -15,6 +15,7 @@ import { ProfileComponent } from './registration/profile/profile.component';
 import { RegistrationPageComponent } from './registration/registration-page/registration-page.component';
 import { SettingsComponent } from './registration/settings/settings.component';
 import { AuthGuardService } from './_helpers/auth-guard.service';
+import { HomeComponent } from './listing/home/home.component';
 
 const routes: Routes = [
   { path: 'order', component: OrderComponent,canActivate:[AuthGuardService] },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'friend-list', component: FriendlistComponent ,canActivate:[AuthGuardService]},
   { path: 'add-friend', component: AddFriendComponent ,canActivate:[AuthGuardService]},
   { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent },
   { path: '**', component: ErrorComponent },
 ];
 

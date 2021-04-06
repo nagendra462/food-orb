@@ -1,10 +1,5 @@
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-8 justify-content-center p-3">
-            <!-- Search form -->
-            <input class="form-control" type="text" placeholder="Search Food Items" aria-label="Search">
-        </div>
-    </div>
+   <br> <br>
     <div class="row justify-content-center">
         <div class="card-columns" *ngFor="let listing of listings; let i = index">
             <!-- Card -->
@@ -31,7 +26,7 @@
                     <!-- Button -->
                     <!-- <a href="#" class="btn btn-primary">Buy</a> -->
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" (click)="addToCart(i)"> Add to
+                    <button type="button" class="btn btn-primary" data-toggle="modal" (click)="addToCart(listing)"> Add to
                         Cart</button>
 
 

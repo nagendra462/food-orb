@@ -16,21 +16,13 @@ export class LoginComponent implements OnInit {
   }
 
   loginCheck(login: HTMLInputElement, password: HTMLInputElement) {
-    /*if (this.authService.authenticate(login.value, password.value)) {
-      this.router.navigate(['/product']);
-      this.inValid = false;
-    } else {
-      this.inValid = true;
-    }*/
     this.authService.authenticate(login.value, password.value)
     .subscribe(
-      //authenticated and succesfull
       (response)=>{
         console.log(response);
-        this.router.navigate(['/product']);
+        this.router.navigate(['/food-listing']);
         this.inValid = false;
       },
-      //unauthorized-failure
       (error)=>{
         console.log(error);
         this.inValid = true;

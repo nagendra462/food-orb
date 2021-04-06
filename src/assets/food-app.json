@@ -22,7 +22,7 @@
   "orders": [
     {
       "listing_id": "1",
-      "quantity": "5",
+      "quantity": "1",
       "amount": "200"
     }
   ],
@@ -44,6 +44,7 @@
   "feedlist": [
     {
       "image_url": "no",
+      "listing_id": "1",
       "restaurent_name": "Naturals",
       "description": "natural Ice cream",
       "name": "Icecream",
@@ -52,6 +53,7 @@
     },
     {
       "image_url": "no",
+      "listing_id": "2",
       "restaurent_name": "Chutneys",
       "description": "Dosa",
       "name": "Dosa",
@@ -59,24 +61,5 @@
       "cost": "200"
     }
   ]
-    ,
-    "orders":[
-      {
-        "listing_id":"1",
-        "quantity": "5",
-        "amount": "200"
-      }
-      ],
-    "orderStatus":[
-      {
-        "orderId": "1",
-        "status": "placed",
-        "description": "Your order has been placed"
-        
-      }],
-
-      "friends":[
-          "Jamie",
-          "Laura"
-        ]
+    
 }

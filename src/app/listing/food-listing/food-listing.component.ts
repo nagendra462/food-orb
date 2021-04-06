@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { literal } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
@@ -30,11 +31,9 @@ export class FoodListingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(index: any) {
-    console.log(index);
-
-    this.order.push(this.listings[index]);
-    this.router.navigate(['/order']);
+  addToCart(listing: Listing) {
+    console.log(listing);
+    this.router.navigate(['/order', {listing_id: listing.listing_id, cost: listing.cost} ]);
   }
 
 

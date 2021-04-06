@@ -9,7 +9,7 @@ import { HeaderService } from './header.service';
   providedIn: 'root'
 })
 export class FoodService {
-
+  apiBaseURL: String = "https://localhost:4200/";
   constructor(private http: HttpClient, private header: HeaderService,) { }
 
 

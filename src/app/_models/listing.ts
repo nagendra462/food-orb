@@ -1,5 +1,6 @@
 export class Listing {
     image_url: string;
+    listing_id: string;
     restaurent_name: string;
     description: string;
     name: string;
@@ -7,6 +8,7 @@ export class Listing {
     cost: string;
 
     constructor( image_url: string,
+        listing_id: string,
         restaurent_name: string,
         description: string,
         name: string,
@@ -18,6 +20,7 @@ export class Listing {
         this.name = name;
         this.rating = rating;
         this.cost = cost;
+        this.listing_id= listing_id;
     }
 
 }

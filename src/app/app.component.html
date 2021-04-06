@@ -12,8 +12,7 @@
       <ul class="nav">
         <li class="nav-item" routerLinkActive="active" *ngIf="authService.isUserLoggedIn()"><a
             class="nav-link btn-primary" [routerLink]="['/food-listing']"> Home </a></li>
-        <li class="nav-item" routerLinkActive="active" *ngIf="authService.isUserLoggedIn()"><a
-            class="nav-link btn-primary" [routerLink]="['/order']"> Order </a></li>
+       
         <li class="nav-item" routerLinkActive="active" *ngIf="authService.isUserLoggedIn()"><a
             class="nav-link btn-primary" [routerLink]="['/settings']"> Settings </a></li>
         <li class="nav-item" routerLinkActive="active" *ngIf="authService.isUserLoggedIn()"><a
@@ -23,7 +22,7 @@
             [routerLink]="['/forgot-password']"> Forgot Password </a></li>
         <li class="nav-item" routerLinkActive="active"><a class="nav-link btn-primary"
             [routerLink]="['/registration-page']"> Registration </a></li>
-        <li class="nav-item" routerLinkActive="active"><a class="nav-link btn-primary" [routerLink]="['/login']"> Login
+        <li class="nav-item" routerLinkActive="active" *ngIf="!authService.isUserLoggedIn()"><a class="nav-link btn-primary" [routerLink]="['/login']"> Login
           </a></li>
 
         <li class="nav-item" routerLinkActive="active" *ngIf="authService.isUserLoggedIn()"><a
