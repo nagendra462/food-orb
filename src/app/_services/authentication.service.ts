@@ -12,11 +12,11 @@ export class AuthenticationService {
 
 
 
-  constructor(private http: HttpClient) { 
-   
-   
+  constructor(private http: HttpClient) {
+
+
   }
- 
+
 
 
 
@@ -42,9 +42,9 @@ export class AuthenticationService {
       .pipe(
         map(successData => {
           //store the token  in session
-          console.log( JSON.parse(JSON.stringify(successData)).role);
-          
-          sessionStorage.setItem("loginId", loginId);         
+          console.log(JSON.parse(JSON.stringify(successData)).role);
+
+          sessionStorage.setItem("loginId", loginId);
           sessionStorage.setItem("authToken", authToken);
           sessionStorage.setItem('currentUserRole', JSON.parse(JSON.stringify(successData)).role);
           return successData;
@@ -59,14 +59,14 @@ export class AuthenticationService {
   getAuthenticationToken() {
     if (this.isUserLoggedIn()) {
       return sessionStorage.getItem("authToken");
-    }   
-      return null;  
+    }
+    return null;
   }
 
   //check if user is logged in
   isUserLoggedIn() {
     let loginId = sessionStorage.getItem("loginId");
-    console.log( "loginId"+loginId);
+    console.log("loginId" + loginId);
     if (loginId == null) {
       return false;
     }
@@ -76,7 +76,7 @@ export class AuthenticationService {
   //check if user is logged in
   getCurrentRole() {
     let role = sessionStorage.getItem("currentUserRole");
-   
+
     return role;
   }
 
@@ -87,6 +87,12 @@ export class AuthenticationService {
     sessionStorage.clear();
   }
 
-  
+  //check if user is logged in
+  getUserId() {
+    let loginId = sessionStorage.getItem("loginId");
+    console.log("loginId" + loginId);
+    return loginId;
+  }
+
 
 }

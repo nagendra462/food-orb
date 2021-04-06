@@ -7,9 +7,9 @@ import { HeaderService } from './header.service';
   providedIn: 'root'
 })
 export class UserService {
+  users: Array<User> = [];
 
-
-  getUsers()  {
+  getUsers() {
 
     const users: Array<User> = [
       new User("test@test.com", "test", "User1", "admin"),
@@ -20,6 +20,13 @@ export class UserService {
 
     return users;
   }
+
+  /*this.http.get<any>("assets/food-app.json").subscribe(
+    res => {
+      this.users = res.users;
+      return this.users;
+    },
+    err => console.log(err));*/
 
   apiBaseURL = "http://localhost/";
 
