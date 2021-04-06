@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Address } from '../_models/Address';
 import { Customer } from '../_models/customer';
 import { User } from '../_models/user';
 import { HeaderService } from './header.service';
@@ -10,6 +11,7 @@ const apiBaseURL = environment.apiUrl;
   providedIn: 'root'
 })
 export class UserService {
+
 
   users: Array<User> = [];
 
@@ -44,5 +46,9 @@ export class UserService {
 
   }
 
-
+  addAddress(arg0: Address[], userId: any) {
+    const headers = { 'content-type': 'application/json' }
+    let customer = new Customer(userId, arg0);
+    return this.http.post(apiBaseURL + '/customers', customer, { 'headers': headers });
+  }
 }

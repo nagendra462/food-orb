@@ -14,6 +14,28 @@
 
         </div>
     </div>
+    <div *ngIf="addAddressClicked">  
+        <form #myform="ngForm" (ngSubmit)="onSubmit(myform.value)">
+
+
+            <div class="col"> <label for="name">Full Name</label></div>
+            <div class="col"><input type="text" name="name" #name="ngModel" ngModel required></div>
+            <span class="text-danger" *ngIf="name.dirty  && name.invalid  && name.errors?.required "> Name is
+                required!!!</span>
+            <br>
+            <div class="col"> <label for="name">Post Code</label></div>
+            <div class="col"><input type="text" name="postCode" #postCode="ngModel" ngModel required></div>
+            <span class="text-danger" *ngIf="postCode.dirty  && postCode.invalid  && postCode.errors?.required "> PostCode is
+                required!!!</span>
+            <div>
+                <button class="btn btn-primary mr-1"  [disabled]="!myform.valid">Submit</button>
+                <button class="btn btn-secondary" type="reset">Clear</button>
+            </div>
+        
+        </form>  
+    
+    </div>
+    
 
     <div class="row justify-content-left">
         <table class="table">
@@ -21,15 +43,12 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th></th>
-                <th></th>
             </thead>
             <tbody>
                 <tr *ngFor="let addressesCheck of addresses">
                     <td>{{userId}}</td>
                     <td>{{addressesCheck.postcode}}</td>
-                    <td><input type="button" class="btn btn-primary" value="Edit"
-                            (click)="editAddressDetails(addressesCheck)">
-                    </td>
+                   
                     <td><input type="button" class="btn btn-primary" value="Delete"
                             (click)="removeAddress(addressesCheck)">
                     </td>

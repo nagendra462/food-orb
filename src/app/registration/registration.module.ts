@@ -4,7 +4,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [ ForgotPasswordComponent, ProfileComponent, SettingsComponent, RegistrationPageComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class RegistrationModule { }
