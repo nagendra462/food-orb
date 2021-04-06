@@ -1,12 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Customer } from '../_models/customer';
 import { User } from '../_models/user';
 import { HeaderService } from './header.service';
-
+const apiBaseURL = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
   users: Array<User> = [];
 
   getUsers() {
@@ -21,20 +25,24 @@ export class UserService {
     return users;
   }
 
-  /*this.http.get<any>("assets/food-app.json").subscribe(
-    res => {
-      this.users = res.users;
-      return this.users;
-    },
-    err => console.log(err));*/
 
-  apiBaseURL = "http://localhost/";
+
+
 
   constructor(private http: HttpClient, private header: HeaderService,) { }
 
   getUserByEmail(email: String): any {
-    return this.http.post(this.apiBaseURL + 'users/finduserbyemail', { email: email }, this.header.requestHeaders()).pipe(res => {
+    return this.http.post(apiBaseURL + '/users/finduserbyemail', { email: email }, this.header.requestHeaders()).pipe(res => {
       return res;
     });
   };
+
+
+  getAddress(): Observable<Customer[]> {
+
+    return this.http.get<Customer[]>(apiBaseURL + '/customers');
+
+  }
+
+
 }

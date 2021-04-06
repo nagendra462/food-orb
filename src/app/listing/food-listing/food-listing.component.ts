@@ -22,7 +22,7 @@ export class FoodListingComponent implements OnInit {
     this.foodService.getFeed().subscribe(
       res => {
 
-        this.listings = res.feedlist;
+        this.listings = res;
       },
       err => console.log(err))
 

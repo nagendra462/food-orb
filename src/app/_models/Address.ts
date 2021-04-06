@@ -1,11 +1,11 @@
 export class Address {
     name: string;
-    address: string;
+    postcode: string;
 
     constructor(  name: string,
-        address: string) {
+        postcode: string) {
         this.name = name;
-        this.address = address;
+        this.postcode = postcode;
     }
 
 }

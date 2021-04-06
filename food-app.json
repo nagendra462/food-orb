@@ -1,4 +1,5 @@
 {
+ 
   "users": [
     {
       "loginId": "test@test.com",
@@ -60,6 +61,20 @@
       "rating": "5",
       "cost": "200"
     }
+  ],
+  "customers": [
+    {
+      "name": "test@test.com",
+      "addresses": [
+        {
+          "street": "Manikonda",
+          "postcode": "500089"
+        },
+        {
+          "street": "Vishakapatnam",
+          "postcode": "523001"
+        }
+      ]
+    }
   ]
-    
 }
